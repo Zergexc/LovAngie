@@ -1,0 +1,82 @@
+.letter-section {
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 500px;
+}
+
+.letter-container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.envelope-wrapper {
+    cursor: pointer;
+}
+
+.envelope {
+    width: 200px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    gap: 1rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+}
+
+.envelope-icon {
+    color: var(--color-primary);
+}
+
+.letter-content {
+    position: relative;
+    padding: 3rem;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    width: 100%;
+    border: none;
+}
+
+.letter-text {
+    font-family: var(--font-body);
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.letter-text h3 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+}
+
+.signature {
+    margin-top: 3rem;
+    text-align: right;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    padding: 0.5rem;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #000;
+}

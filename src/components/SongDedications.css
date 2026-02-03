@@ -1,0 +1,228 @@
+.songs-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--color-text-muted);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.songs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+    .songs-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: start;
+    }
+}
+
+/* Reproductor Principal Side-by-Side */
+.main-player {
+    overflow: hidden;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenedor Flex interno para desktop */
+.main-player-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .main-player-content {
+        flex-direction: row;
+        align-items: stretch;
+        min-height: 350px;
+    }
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    /* Mantener aspect ratio en mobile */
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    .video-wrapper {
+        flex: 1.2;
+        /* Un poco más de espacio para el video */
+        padding-bottom: 0;
+        /* Quitar aspect ratio padding */
+        height: auto;
+        /* Altura automática basada en contenedor flex */
+        min-height: 300px;
+        /* Altura mínima */
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.song-info {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.song-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.song-date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+    font-weight: 600;
+}
+
+.song-tag {
+    background: rgba(236, 72, 153, 0.2);
+    color: #f9a8d4;
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(236, 72, 153, 0.3);
+}
+
+.song-info h3 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.message-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--color-primary);
+}
+
+.song-message {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+/* Sidebar Playlist */
+.playlist-sidebar {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.playlist-sidebar h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: #fff;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 1rem;
+}
+
+.playlist-scroll {
+    max-height: 400px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-right: 0.5rem;
+}
+
+.playlist-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.playlist-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.playlist-item.active {
+    background: rgba(236, 72, 153, 0.2);
+    border-color: var(--color-primary);
+}
+
+.playlist-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.playlist-item.active .playlist-icon {
+    background: var(--color-primary);
+}
+
+.playlist-info {
+    overflow: hidden;
+}
+
+.playlist-info h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.playlist-info span {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
